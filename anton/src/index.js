@@ -13,6 +13,6 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
-mongoose.connect("mongodb+srv://sahilhalbe:kiCY51ZXZ4DkPqnO@recipes.dp5lvxi.mongodb.net/recipes?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGODB_CONNECTION);
 
-app.listen(3001, () => console.log("Server started on port 3001"));
+app.listen(process.env.PORT, () => console.log("Server started on port ", process.env.PORT));
